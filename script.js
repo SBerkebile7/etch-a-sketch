@@ -35,10 +35,3 @@ function cellColorChange(e) {
 window.onload = function() {
     createGrid();
 };
-
-/*
-for( let i = 0; i < 257; i++){
-    const divBox = document.createElement('div');
-    container.appendChild(divBox);
-};
-*/
