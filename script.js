@@ -12,7 +12,7 @@ function createGrid(gridCount = 16) {
             width : `${(size / gridCount) - 2}px`
         });
         gridCells.classList.add("cellBox");
-        //gridCells.addEventListener('mouseover', changeCellColor);
+        gridCells.addEventListener('mouseover', cellColorChange);
         container.appendChild(gridCells);
     }
 }
@@ -24,6 +24,13 @@ function gridReset(e) {
     };
     createGrid(newGridCount);
 }
+
+function cellColorChange(e) {
+    Object.assign(e.target.style, {
+        backgroundColor : 'black',
+        opacity: 0.25
+    });
+};
 
 window.onload = function() {
     createGrid();
