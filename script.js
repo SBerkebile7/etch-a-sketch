@@ -18,11 +18,15 @@ function createGrid(gridCount = 16) {
 }
 
 function gridReset(e) {
-    let newGridCount = +prompt("How many cells would you like per row & column?", 16)
+    let newGridCount = +prompt("How many cells would you like per row & column? Please enter a number less than 100.", 16)
     while(container.firstChild) {
         container.removeChild(container.lastChild);
     };
-    createGrid(newGridCount);
+    if(newGridCount <= 100) {
+        createGrid(newGridCount);
+    } else {
+        gridReset();
+    }
 }
 
 function cellColorChange(e) {
